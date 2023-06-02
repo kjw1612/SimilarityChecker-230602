@@ -7,9 +7,30 @@ class Checker
 public:
 	const int MAX_POINT = 60;
 	const int MAX_ALPHA_POINT = 40;
+	const int MAX_ALPHA_NUM = 26;
+
+	bool checkAssertAlpha(string firstStr, string secondStr)
+	{
+		for (int i = 0; i < firstStr.length(); i++)
+		{
+			if (firstStr[i] < 'A' || firstStr[i] > 'Z') return true;
+		}
+
+		for (int i = 0; i < secondStr.length(); i++)
+		{
+			if (secondStr[i] < 'A' || secondStr[i] > 'Z') return true;
+		}
+
+		return false;
+	}
 
 	int getStringAlphaCompare(string firstStr, string secondStr)
 	{
+		if(checkAssertAlpha(firstStr, secondStr))
+		{
+			return -1;
+		}
+
 		if(checkSameUsedAlpha(firstStr, secondStr))
 		{
 			return MAX_ALPHA_POINT;
@@ -59,7 +80,7 @@ public:
 	int getUsedAlphaCount(int usedAlpha)
 	{
 		int usedCount = 0;
-		for(int i = 0;i < 26; i++)
+		for(int i = 0;i < MAX_ALPHA_NUM; i++)
 		{
 			if((usedAlpha & (1 << i)) != 0)
 			{

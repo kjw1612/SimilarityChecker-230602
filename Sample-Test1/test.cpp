@@ -32,3 +32,7 @@ TEST(TestCaseName, CheckAlpha3) {
 TEST(TestCaseName, CheckAlpha4) {
 	EXPECT_EQ(20, Checker().getStringAlphaCompare("AA", "AAE"));
 }
+
+TEST(TestCaseName, CheckAlpha5) {
+	EXPECT_EQ(-1, Checker().getStringAlphaCompare("aa", "bbb"));
+}
