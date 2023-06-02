@@ -5,12 +5,13 @@ using namespace std;
 class Checker
 {
 public:
+	const int MAX_POINT = 60;
 
 	int getStringLength(string firstStr, string secondStr)
 	{
 		if(firstStr.length() == secondStr.length())
 		{
-			return 60;
+			return MAX_POINT;
 		}
 		else if(firstStr.length() > secondStr.length())
 		{
@@ -33,7 +34,7 @@ public:
 
 		if (firLength >= secondLength) 
 		{
-			gapLength = firLength - seco ndLength;
+			gapLength = firLength - secondLength;
 			minLength = secondLength;
 		}
 		else
