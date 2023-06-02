@@ -16,3 +16,23 @@ TEST(TestCaseName, CheckLength3) {
 TEST(TestCaseName, CheckLength4) {
 	EXPECT_EQ(53, Checker().getStringLength("AA", "AAA"));
 }
+
+TEST(TestCaseName, CheckAlpha1) {
+	EXPECT_EQ(40, Checker().getStringAlphaCompare("ABS", "ABS"));
+}
+
+TEST(TestCaseName, CheckAlpha2) {
+	EXPECT_EQ(0, Checker().getStringAlphaCompare("A", "BB"));
+}
+
+TEST(TestCaseName, CheckAlpha3) {
+	EXPECT_EQ(40, Checker().getStringAlphaCompare("AAABB", "BA"));
+}
+
+TEST(TestCaseName, CheckAlpha4) {
+	EXPECT_EQ(20, Checker().getStringAlphaCompare("AA", "AAE"));
+}
+
+TEST(TestCaseName, CheckAlpha5) {
+	EXPECT_EQ(-1, Checker().getStringAlphaCompare("aa", "bbb"));
+}
